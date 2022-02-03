@@ -55,15 +55,19 @@ def get_scores(month):
     Access the google sheet and return all of scores for each different
     area as a comma separated list of values. 
     """
-    month_chosen_name = calendar.month_name[int(month)]
+    month_chosen_name = calendar.month_name[month]
     print(f"Gathering data for the month: {month_chosen_name}...\n")
     month_worksheet = SHEET.worksheet(month_chosen_name)
     month_data = month_worksheet.get_all_values()
 
     columns = []
-    headers = month_worksheet.row_values(1)[2:]
-    print(month_data)
-    print(headers)
+    headers = month_worksheet.row_values(1)[2:10]
+    for num, header in zip(range(3,11), headers):
+        score = month_worksheet.col_values(num)[1:]
+        print(f"{header}:  {score}")
+
+    print(f"Month data: {month_data}")
+    print(f"Headers: {headers}")
 
 
 month = get_month()
