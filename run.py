@@ -25,13 +25,13 @@ def get_month():
 
         month_chosen_str = input("Enter your choice of month here: ")
         
-        if(check_data(month_chosen_str)):
+        if(check_month(month_chosen_str)):
             print("Valid month chosen.")
             break
 
     return month_chosen_str
 
-def check_data(scores):
+def check_month(scores):
     """
     Check the user has inputted a valid month when prompted.
     It must be an integer between 1 - 12 inclusive.
