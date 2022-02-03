@@ -12,6 +12,15 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('feedback-form-pp3')
 
-all = SHEET.worksheet('AllResponses')
-data = all.get_all_values()
-print(data)
+def get_averages():
+    """
+    Collate the average scores for each area in the feedback form
+    based on the month selected by the user.
+    """
+    print("Please enter the month that you would like to view the feedback for...\n")
+    print("Note that months are numbered, e.g 1 = January, 2 = February... 11 == November\n")
+
+    month_chosen_num = input("Enter your choice of month here:\n")
+    print(f"Month chosen: {month_chosen_num}")
+
+get_averages()
