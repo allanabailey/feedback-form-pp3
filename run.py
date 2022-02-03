@@ -13,7 +13,7 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('feedback-form-pp3')
 
-def get_scores():
+def get_month():
     """
     Collate the scores for each area in the feedback form
     based on the month selected by the user.
@@ -23,12 +23,13 @@ def get_scores():
         print("Please enter the month that you would like to view the feedback for...\n")
         print("Note that months are numbered, e.g 1 = January, 2 = February... 11 = November\n")
 
-        month_chosen_str = input("Enter your choice of month here:\n")
+        month_chosen_str = input("Enter your choice of month here: ")
         
         if(check_data(month_chosen_str)):
             print("Valid month chosen.")
             break
 
+    return month_chosen_str
 
 def check_data(scores):
     """
@@ -48,5 +49,6 @@ def check_data(scores):
     return True
 
 
-get_scores()
+month = get_month()
+print(month)
 # month_chosen_name = calendar.month_name[month_chosen_num]
