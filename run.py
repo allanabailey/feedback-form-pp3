@@ -8,10 +8,10 @@ SCOPE = [
     "https://www.googleapis.com/auth/drive"
     ]
 
-CREDS = Credentials.from_service_account_file('creds.json')
+CREDS = Credentials.from_service_account_file("creds.json")
 SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
-SHEET = GSPREAD_CLIENT.open('feedback-form-pp3')
+SHEET = GSPREAD_CLIENT.open("feedback-form-pp3")
 
 def get_month():
     """
@@ -29,7 +29,7 @@ def get_month():
             print("Valid month chosen.")
             break
 
-    return month_chosen_str
+    return int(month_chosen_str)
 
 
 def check_month(month):
@@ -59,10 +59,15 @@ def get_scores(month):
     print(f"Gathering data for the month: {month_chosen_name}...\n")
     month_worksheet = SHEET.worksheet(month_chosen_name)
     month_data = month_worksheet.get_all_values()
+
+    columns = []
+    headers = month_worksheet.row_values(1)[2:]
     print(month_data)
+    print(headers)
 
 
 month = get_month()
+print(month)
 test_data = get_scores(month)
-print(test_data)
+# print(test_data)
 # month_chosen_name = calendar.month_name[month_chosen_num]
