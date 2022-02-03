@@ -31,13 +31,13 @@ def get_month():
 
     return month_chosen_str
 
-def check_month(scores):
+def check_month(month):
     """
     Check the user has inputted a valid month when prompted.
     It must be an integer between 1 - 12 inclusive.
     """
     try:
-        month_chosen_num = int(scores)
+        month_chosen_num = int(month)
         if(month_chosen_num < 1 or month_chosen_num > 12):
             raise ValueError(
                 f"The number entered must be between 1 and 12. You entered: {month_chosen_num}"
