@@ -18,11 +18,16 @@ def get_scores():
     Collate the scores for each area in the feedback form
     based on the month selected by the user.
     """
-    print("Please enter the month that you would like to view the feedback for...\n")
-    print("Note that months are numbered, e.g 1 = January, 2 = February... 11 = November\n")
 
-    month_chosen_str = input("Enter your choice of month here:\n")
-    check_data(month_chosen_str)
+    while True:
+        print("Please enter the month that you would like to view the feedback for...\n")
+        print("Note that months are numbered, e.g 1 = January, 2 = February... 11 = November\n")
+
+        month_chosen_str = input("Enter your choice of month here:\n")
+        
+        if(check_data(month_chosen_str)):
+            print("Valid month chosen.")
+            break
 
 
 def check_data(scores):
@@ -38,7 +43,10 @@ def check_data(scores):
             )
     except ValueError as e:
         print(f"Invalid input: {e}, please try again.\n")
-    # print(scores)
+        return False
+    
+    return True
+
 
 get_scores()
 # month_chosen_name = calendar.month_name[month_chosen_num]
