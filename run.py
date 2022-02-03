@@ -31,6 +31,7 @@ def get_month():
 
     return month_chosen_str
 
+
 def check_month(month):
     """
     Check the user has inputted a valid month when prompted.
@@ -49,6 +50,19 @@ def check_month(month):
     return True
 
 
+def get_scores(month):
+    """
+    Access the google sheet and return all of scores for each different
+    area as a comma separated list of values. 
+    """
+    month_chosen_name = calendar.month_name[int(month)]
+    print(f"Gathering data for the month: {month_chosen_name}...\n")
+    month_worksheet = SHEET.worksheet(month_chosen_name)
+    month_data = month_worksheet.get_all_values()
+    print(month_data)
+
+
 month = get_month()
-print(month)
+test_data = get_scores(month)
+print(test_data)
 # month_chosen_name = calendar.month_name[month_chosen_num]
