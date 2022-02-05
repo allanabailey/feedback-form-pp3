@@ -77,7 +77,16 @@ def get_scores(month):
 
     return scores_with_headers
 
+
+def present_data(score_data):
+    # for key, value in score_data.items():
+        # print(key, ' : ', value)
+
+    for key, value in score_data.items():
+        # print(key, ' : ', *value, sep = ", ")
+        print(key, " : ", value)
+
 month = get_month()
 score_data = get_scores(month)
-print(score_data)
+data_for_user = present_data(score_data)
 # month_chosen_name = calendar.month_name[month_chosen_num]
