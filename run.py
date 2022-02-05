@@ -82,6 +82,24 @@ def present_data(score_data):
         print(key, " : ", value)
 
 
+def calculate_average(score_data):
+    """
+    Using the dictionary created containing all of the headers and scores,
+    calculate the average score for each area
+    """
+    print("Calculating average scores...\n")
+    average_dict = {}
+    for key, value in score_data.items():
+        average_dict[key] = sum(value) / float(len(value))
+
+    print("Average scores: \n")
+    present_data(average_dict)
+    
+    return average_dict
+
+
 month = get_month()
 score_data = get_scores(month) # Dictionary with header and scores
+print("All scores for the month...\n")
 data_for_user = present_data(score_data) # Print scores in a readable format to the user
+calculate_average(score_data)
