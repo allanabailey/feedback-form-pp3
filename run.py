@@ -67,12 +67,13 @@ def get_scores(month):
     for num, header in zip(range(3,11), headers):
         score = month_worksheet.col_values(num)[1:]
         scores.append(score)
-        scores_with_headers[header] = score
-        print(f"{header}:  {score}")
+        for score in scores:
+            int_score = [int(num) for num in score]
+            scores_with_headers[header] = int_score
 
     # print(f"Month data: {month_data}")
-    print(f"Headers: {headers}")
-    print(f"Scores: {scores}")
+    # print(f"Headers: {headers}")
+    # print(f"Scores: {scores}")
 
     return scores_with_headers
 
