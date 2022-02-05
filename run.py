@@ -138,14 +138,8 @@ def update_worksheet(month, average_scores):
         colno += 1
         i += 1
 
+    print("Worksheet updated successfully.\n")
 
-    # for num in averages:
-        # avg_worksheet.update(f'B{row}:I{row}', num)
-        # avg_worksheet.updateRow(row, num)
-
-    # avg_worksheet.update(cell+1, averages)
-    print(month)
-    print(average_scores)
 
 
 month = get_month()
