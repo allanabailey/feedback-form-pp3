@@ -71,22 +71,17 @@ def get_scores(month):
             int_score = [int(num) for num in score]
             scores_with_headers[header] = int_score
 
-    # print(f"Month data: {month_data}")
-    # print(f"Headers: {headers}")
-    # print(f"Scores: {scores}")
-
     return scores_with_headers
 
 
 def present_data(score_data):
-    # for key, value in score_data.items():
-        # print(key, ' : ', value)
-
+    """
+    Collate the data and present it to the user in a more readable format.
+    """
     for key, value in score_data.items():
-        # print(key, ' : ', *value, sep = ", ")
         print(key, " : ", value)
 
+
 month = get_month()
-score_data = get_scores(month)
-data_for_user = present_data(score_data)
-# month_chosen_name = calendar.month_name[month_chosen_num]
+score_data = get_scores(month) # Dictionary with header and scores
+data_for_user = present_data(score_data) # Print scores in a readable format to the user
