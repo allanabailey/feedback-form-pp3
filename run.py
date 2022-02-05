@@ -98,14 +98,14 @@ def calculate_average(score_data):
     return average_dict
 
 
-def check_if_update(month, question):
+def check_if_update(question):
     """
     Check to see if the user would like to update the worksheet with these averages
     or wait until a later date.
     """
     ans = input(question).strip().lower()
     try:
-        if(ans not in ['y', 'n']):
+        if(ans not in ["y", "n"]):
             raise ValueError(
                 f"Please enter either 'y' for Yes, or 'n' for No. You entered: {ans}"
             )
@@ -113,8 +113,39 @@ def check_if_update(month, question):
         print(f"Invalid input: {e}, please try again.\n")
         return check_if_update(question)
 
-    update_worksheet(month)
+    if(ans == "y"):
+        update_worksheet(month, average_scores)
+    else:
+        print("Spreadsheet not updated.")
 
+
+def update_worksheet(month, average_scores):
+    """
+    Update the 'Averages' worksheet with the averages of the month the user is
+    currently investigating.
+    """
+    print("Updating 'Averages' worksheet...\n")
+    avg_worksheet = SHEET.worksheet("Averages")
+    cell = avg_worksheet.find(calendar.month_name[month])
+    row = cell.row
+
+    averages = []
+    colno = 2
+    i = 0
+    for key, value in average_scores.items():
+        averages.append(value)
+        avg_worksheet.update_cell(row, colno, averages[i])
+        colno += 1
+        i += 1
+
+
+    # for num in averages:
+        # avg_worksheet.update(f'B{row}:I{row}', num)
+        # avg_worksheet.updateRow(row, num)
+
+    # avg_worksheet.update(cell+1, averages)
+    print(month)
+    print(average_scores)
 
 
 month = get_month()
@@ -122,4 +153,4 @@ score_data = get_scores(month) # Dictionary with header and scores
 print("All scores for the month...\n")
 data_for_user = present_data(score_data) # Print scores in a readable format to the user
 average_scores = calculate_average(score_data) # Calculate averages and present to the user
-update_yes_no = check_if_update(month, "Would you like to update the worksheet with the averages? (y/n): ")
+update_yes_no = check_if_update("Would you like to update the worksheet with the averages? (y/n): ")
