@@ -60,18 +60,23 @@ def get_scores(month):
     month_worksheet = SHEET.worksheet(month_chosen_name)
     month_data = month_worksheet.get_all_values()
 
-    columns = []
+    scores = []
+    scores_with_headers = {}
     headers = month_worksheet.row_values(1)[2:10]
     for num, header in zip(range(3,11), headers):
         score = month_worksheet.col_values(num)[1:]
+        scores.append(score)
+        scores_with_headers[header] = score
         print(f"{header}:  {score}")
 
-    print(f"Month data: {month_data}")
-    print(f"Headers: {headers}")
 
+    # print(f"Month data: {month_data}")
+    print(f"Headers: {headers}")
+    print(f"Scores: {scores}")
+    print(f"Scores with headers: {scores_with_headers}")
 
 month = get_month()
-print(month)
+print(type(month))
 test_data = get_scores(month)
 # print(test_data)
 # month_chosen_name = calendar.month_name[month_chosen_num]
