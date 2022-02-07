@@ -18,7 +18,6 @@ def get_month():
     Collate the scores for each area in the feedback form
     based on the month selected by the user.
     """
-
     while True:
         print("Please enter the month that you would like to view the feedback for...\n")
         print("Note that months are numbered, e.g 1 = January, 2 = February... 11 = November\n")
@@ -38,6 +37,10 @@ def check_month(month):
     It must be an integer between 1 - 12 inclusive.
     """
     try:
+        if(month.isnumeric() ==  False):
+            raise TypeError (
+                f"You must enter a number between 1 and 12. You entered: '{month}'"
+            )
         month_chosen_num = int(month)
         if(month_chosen_num < 1 or month_chosen_num > 12):
             raise ValueError(
@@ -46,7 +49,10 @@ def check_month(month):
     except ValueError as e:
         print(f"Invalid input: {e}, please try again.\n")
         return False
-    
+    except TypeError as e:
+        print(f"Invalid input: {e}, please try again.\n")
+        return False
+
     return True
 
 
@@ -80,7 +86,7 @@ def present_data(score_data):
     """
     for key, value in score_data.items():
         print(key, " : ", value)
-    print("\n")
+    print()
 
 
 def calculate_average(score_data):
@@ -140,7 +146,6 @@ def update_worksheet(month, average_scores):
         i += 1
 
     print("Worksheet updated successfully.\n")
-
 
 
 month = get_month()
