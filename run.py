@@ -82,6 +82,7 @@ def present_data(score_data):
         print(key, " : ", value)
     print("\n")
 
+
 def calculate_average(score_data):
     """
     Using the dictionary created containing all of the headers and scores,
