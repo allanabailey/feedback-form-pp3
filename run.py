@@ -73,7 +73,6 @@ def get_manual_scores(month):
             print("Data is valid!")
             break
     
-    print(scores_data)
     return scores_data
 
 
@@ -84,7 +83,17 @@ def validate_manual_data(scores_data):
     There must be 8 numbers separated by commas.
     Numbers must be whole numbers.
     """
-    print("Hello world!")
+    try:
+        [int(score) for score in scores_data]
+        if len(scores_data) != 8:
+            raise ValueError(
+                f"Exactly 8 values are required. You provided {len(scores_data)}"
+            )
+    except ValueError as e:
+        print(f"Invalid data: {e}, please try again.\n")
+        return False
+
+    return True
 
 
 def check_month(month):
