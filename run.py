@@ -48,12 +48,12 @@ def check_if_manual_form(question):
         return check_if_manual_form(question)
 
     if(ans == "y"):
-        update_manual_scores(month)
+        get_manual_scores(month)
     else:
         print("No manual insert needed. Moving on to calculate scores.")
 
 
-def update_manual_scores(month):
+def get_manual_scores(month):
     """
     Gather the scores from the user for the month they have chosen in the case where
     a physical feedback form has been returned rather than the online feedback form being filled
