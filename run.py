@@ -111,17 +111,18 @@ def calculate_highest_score(average_scores):
     including all areas that have the same highest average score.
     """
     print("Calculating highest scoring area...\n")
-    # highest_score = 0
-    # highest_scores = {}
-    # for key, value in average_scores.items():
-        # if value >= highest_score:
-            # highest_score = value
 
     scores = average_scores.values()
     highest_score = max(scores)
-    print("Highest Scores: \n")
-    print(highest_score)
+    highest_scores = {}
+    for key, value in average_scores.items():
+        if(value == highest_score):
+            highest_scores[key] = value
+
+    print("Highest Scoring Areas: \n")
+    present_data(highest_scores)
     
+    return average_scores
 
 
 
@@ -132,7 +133,7 @@ def check_if_update(question):
     """
     ans = input(question).strip().lower()
     try:
-        if(ans not in ["y", "n"]):
+        if(ans not in ["y", "n"]): 
             raise ValueError(
                 f"Please enter either 'y' for Yes, or 'n' for No. You entered: {ans}"
             )
