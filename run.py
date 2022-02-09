@@ -105,6 +105,26 @@ def calculate_average(score_data):
     return average_dict
 
 
+def calculate_highest_score(average_scores):
+    """
+    Alert the user to the highest scoring area based on the averages calculated
+    including all areas that have the same highest average score.
+    """
+    print("Calculating highest scoring area...\n")
+    # highest_score = 0
+    # highest_scores = {}
+    # for key, value in average_scores.items():
+        # if value >= highest_score:
+            # highest_score = value
+
+    scores = average_scores.values()
+    highest_score = max(scores)
+    print("Highest Scores: \n")
+    print(highest_score)
+    
+
+
+
 def check_if_update(question):
     """
     Check to see if the user would like to update the worksheet with these averages
@@ -153,4 +173,5 @@ score_data = get_scores(month) # Dictionary with header and scores
 print("All scores for the month...\n")
 data_for_user = present_data(score_data) # Print scores in a readable format to the user
 average_scores = calculate_average(score_data) # Calculate averages and present to the user
+highest_score = calculate_highest_score(average_scores)
 update_yes_no = check_if_update("Would you like to update the worksheet with the averages? (y/n): ")
