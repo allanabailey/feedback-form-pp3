@@ -127,8 +127,8 @@ def calculate_highest_score(average_scores):
 
 def calculate_lowest_score(average_scores):
     """
-    Alert the user to the highest scoring area based on the averages calculated
-    including all areas that have the same highest average score.
+    Alert the user to the lowest scoring area based on the averages calculated
+    including all areas that have the same lowest average score.
     """
     print("Calculating lowest scoring area(s)...\n")
 
