@@ -57,7 +57,7 @@ def check_month(month):
     return True
 
 
-def check_if_manual_form(question):
+def check_if_manual_form(month, question):
     """
     Check to see if the user would like to update the worksheet with a new feedback form manually,
     for instance if a customer handed them a physical feedback form rather than completing the online
@@ -71,7 +71,7 @@ def check_if_manual_form(question):
             )
     except ValueError as e:
         print(f"Invalid input: {e}, please try again.\n")
-        return check_if_manual_form(question)
+        return check_if_manual_form(month, question)
 
     if(ans == "y"):
         get_manual_scores(month)
@@ -289,7 +289,7 @@ def main():
     Run all functions.
     """
     month = get_month()
-    check_if_manual_form("Would you like to manually enter a new feedback form? (y/n): ")
+    check_if_manual_form(month, "Would you like to manually enter a new feedback form? (y/n): ")
     score_data = get_scores(month) 
     print("All scores for the month...\n")
     present_data(score_data) 
