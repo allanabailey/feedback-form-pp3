@@ -31,6 +31,36 @@ def get_month():
     return int(month_chosen_str)
 
 
+def check_if_manual_form(question):
+    """
+    Check to see if the user would like to update the worksheet with a new feedback form manually,
+    for instance if a customer handed them a physical feedback form rather than completing the online
+    google form.
+    """
+    ans = input(question).strip().lower()
+    try:
+        if(ans not in ["y", "n"]): 
+            raise ValueError(
+                f"Please enter either 'y' for Yes, or 'n' for No. You entered: {ans}"
+            )
+    except ValueError as e:
+        print(f"Invalid input: {e}, please try again.\n")
+        return check_if_manual_form(question)
+
+    if(ans == "y"):
+        update_manual_scores(month)
+    else:
+        print("No manual insert needed. Moving on to calculate scores.")
+
+
+def update_manual_scores(month):
+    """
+    Gather the scores from the user for the month they have chosen in the case where
+    a physical feedback form has been returned rather than the online feedback form being filled
+    out by the customer.
+    """
+    print("Hello world!")
+
 def check_month(month):
     """
     Check the user has inputted a valid month when prompted.
@@ -189,6 +219,7 @@ def update_worksheet(month, average_scores):
 
 
 month = get_month()
+manual_form_yes_no = check_if_manual_form("Would you like to manually enter a new feedback form? (y/n): ")
 score_data = get_scores(month) # Dictionary with header and scores
 print("All scores for the month...\n")
 data_for_user = present_data(score_data) # Print scores in a readable format to the user
