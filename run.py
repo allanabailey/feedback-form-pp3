@@ -194,7 +194,7 @@ def calculate_average(score_data):
     print("Calculating average scores...\n")
     average_dict = {}
     for key, value in score_data.items():
-        average_dict[key] = sum(value) / float(len(value))
+        average_dict[key] = round((sum(value) / float(len(value))), 2)
 
     print("Average scores: \n")
     present_data(average_dict)
