@@ -115,9 +115,13 @@ def validate_manual_data(scores_data):
                     f"Exactly 8 round numbers are required. You provided {scores_data}"
                 )
         [int(score) for score in scores_data]
-        if len(scores_data) != 8:
+        if(len(scores_data) != 8):
             raise ValueError(
                 f"Exactly 8 values are required. You provided {len(scores_data)}"
+            )
+        if(int(score) < 0 or int(score) > 10):
+            raise ValueError(
+                f"Please insert numbers between 1 and 10. You provided {score}"
             )
     except ValueError as e:
         print(f"Invalid data: {e}, please try again.\n")
