@@ -191,7 +191,7 @@ def calculate_average(score_data):
     Using the dictionary created containing all of the headers and scores,
     calculate the average score for each area
     """
-    print("Calculating average scores...\n")
+    print("Calculating scores...\n")
     average_dict = {}
     for key, value in score_data.items():
         average_dict[key] = round((sum(value) / float(len(value))), 2)
@@ -207,8 +207,6 @@ def calculate_highest_score(average_scores):
     Alert the user to the highest scoring area based on the averages calculated
     including all areas that have the same highest average score.
     """
-    print("Calculating highest scoring area(s)...\n")
-
     scores = average_scores.values()
     highest_score = max(scores)
     highest_scores = {}
@@ -227,8 +225,6 @@ def calculate_lowest_score(average_scores):
     Alert the user to the lowest scoring area based on the averages calculated
     including all areas that have the same lowest average score.
     """
-    print("Calculating lowest scoring area(s)...\n")
-
     scores = average_scores.values()
     lowest_score = min(scores)
     lowest_scores = {}
