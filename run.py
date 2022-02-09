@@ -14,6 +14,7 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open("feedback-form-pp3")
 
+
 def get_month():
     """
     Collate the scores for each area in the feedback form
@@ -24,7 +25,7 @@ def get_month():
         print("Note that months are numbered, e.g 1 = January, 2 = February... 11 = November\n")
 
         month_chosen_str = input("Enter your choice of month here: ")
-        
+
         if(check_month(month_chosen_str)):
             print("Valid month chosen.")
             break
@@ -38,8 +39,8 @@ def check_month(month):
     It must be an integer between 1 - 12 inclusive.
     """
     try:
-        if(month.isnumeric() ==  False):
-            raise TypeError (
+        if(month.isnumeric() is False):
+            raise TypeError(
                 f"You must enter a number between 1 and 12. You entered: '{month}'"
             )
         month_chosen_num = int(month)
@@ -65,7 +66,7 @@ def check_if_manual_form(month, question):
     """
     ans = input(question).strip().lower()
     try:
-        if(ans not in ["y", "n"]): 
+        if(ans not in ["y", "n"]):
             raise ValueError(
                 f"Please enter either 'y' for Yes, or 'n' for No. You entered: {ans}"
             )
@@ -98,7 +99,7 @@ def get_manual_scores(month):
         if validate_manual_data(scores_data):
             print("Data is valid!")
             break
-    
+
     update_worksheet_manual(month, scores_data)
     return scores_data
 
@@ -147,7 +148,7 @@ def update_worksheet_manual(month, scores_data):
     scores = [int(score) for score in scores_data]
     data = [timestamp, month_name]
     data.extend(scores)
-    
+
     worksheet_to_update = SHEET.worksheet("AllResponses")
     worksheet_to_update.append_row(data)
     print("Main responses ('AllResponses') worksheet updated successfully.\n")
@@ -156,7 +157,7 @@ def update_worksheet_manual(month, scores_data):
 def get_scores(month):
     """
     Access the google sheet and return all of scores for each different
-    area as a comma separated list of values. 
+    area as a comma separated list of values.
     """
     month_chosen_name = calendar.month_name[month]
     print(f"Gathering data for the month: {month_chosen_name}...\n")
@@ -167,7 +168,7 @@ def get_scores(month):
     scores_with_headers = {}
     headers = month_worksheet.row_values(1)[2:10]
 
-    for num, header in zip(range(3,11), headers):
+    for num, header in zip(range(3, 11), headers):
         score = month_worksheet.col_values(num)[1:]
         scores.append(score)
         for score in scores:
@@ -198,7 +199,7 @@ def calculate_average(score_data):
 
     print("Average scores: \n")
     present_data(average_dict)
-    
+
     return average_dict
 
 
@@ -216,7 +217,7 @@ def calculate_highest_score(average_scores):
 
     print("Highest Scoring Area(s): \n")
     present_data(highest_scores)
-    
+
     return highest_scores
 
 
@@ -234,7 +235,7 @@ def calculate_lowest_score(average_scores):
 
     print("Lowest Scoring Area(s): \n")
     present_data(lowest_scores)
-    
+
     return lowest_scores
 
 
@@ -245,7 +246,7 @@ def check_if_update(month, average_scores, question):
     """
     ans = input(question).strip().lower()
     try:
-        if(ans not in ["y", "n"]): 
+        if(ans not in ["y", "n"]):
             raise ValueError(
                 f"Please enter either 'y' for Yes, or 'n' for No. You entered: {ans}"
             )
@@ -280,16 +281,17 @@ def update_worksheet(month, average_scores):
 
     print("Worksheet updated successfully.\n")
 
+
 def main():
     """
     Run all functions.
     """
     month = get_month()
     check_if_manual_form(month, "Would you like to manually enter a new feedback form? (y/n): ")
-    score_data = get_scores(month) 
+    score_data = get_scores(month)
     print("All scores for the month...\n")
-    present_data(score_data) 
-    average_scores = calculate_average(score_data) 
+    present_data(score_data)
+    average_scores = calculate_average(score_data)
     calculate_highest_score(average_scores)
     calculate_lowest_score(average_scores)
     check_if_update(month, average_scores, "Would you like to update the worksheet with the averages? (y/n): ")
