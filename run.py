@@ -242,7 +242,7 @@ def calculate_lowest_score(average_scores):
     return lowest_scores
 
 
-def check_if_update(question):
+def check_if_update(month, average_scores, question):
     """
     Check to see if the user would like to update the worksheet with these averages
     or wait until a later date.
@@ -255,7 +255,7 @@ def check_if_update(question):
             )
     except ValueError as e:
         print(f"Invalid input: {e}, please try again.\n")
-        return check_if_update(question)
+        return check_if_update(month, average_scores, question)
 
     if(ans == "y"):
         update_worksheet(month, average_scores)
@@ -284,13 +284,22 @@ def update_worksheet(month, average_scores):
 
     print("Worksheet updated successfully.\n")
 
+def main():
+    """
+    Run all functions.
+    """
+    month = get_month()
+    check_if_manual_form("Would you like to manually enter a new feedback form? (y/n): ")
+    score_data = get_scores(month) 
+    print("All scores for the month...\n")
+    present_data(score_data) 
+    average_scores = calculate_average(score_data) 
+    calculate_highest_score(average_scores)
+    calculate_lowest_score(average_scores)
+    check_if_update(month, average_scores, "Would you like to update the worksheet with the averages? (y/n): ")
 
-month = get_month()
-manual_form_yes_no = check_if_manual_form("Would you like to manually enter a new feedback form? (y/n): ")
-score_data = get_scores(month) # Dictionary with header and scores
-print("All scores for the month...\n")
-data_for_user = present_data(score_data) # Print scores in a readable format to the user
-average_scores = calculate_average(score_data) # Calculate averages and present to the user
-highest_score = calculate_highest_score(average_scores)
-lowest_score = calculate_lowest_score(average_scores)
-update_yes_no = check_if_update("Would you like to update the worksheet with the averages? (y/n): ")
+
+print("Welcome to your feedback form collector and analyser!")
+print("Please note that any updates are only accurate at the time of updating the worksheet, ")
+print("so if any further data or feedback is collected, please return here.")
+main()
