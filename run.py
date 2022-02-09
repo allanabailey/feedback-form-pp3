@@ -110,7 +110,7 @@ def calculate_highest_score(average_scores):
     Alert the user to the highest scoring area based on the averages calculated
     including all areas that have the same highest average score.
     """
-    print("Calculating highest scoring area...\n")
+    print("Calculating highest scoring area(s)...\n")
 
     scores = average_scores.values()
     highest_score = max(scores)
@@ -119,11 +119,30 @@ def calculate_highest_score(average_scores):
         if(value == highest_score):
             highest_scores[key] = value
 
-    print("Highest Scoring Areas: \n")
+    print("Highest Scoring Area(s): \n")
     present_data(highest_scores)
     
-    return average_scores
+    return highest_scores
 
+
+def calculate_lowest_score(average_scores):
+    """
+    Alert the user to the highest scoring area based on the averages calculated
+    including all areas that have the same highest average score.
+    """
+    print("Calculating lowest scoring area(s)...\n")
+
+    scores = average_scores.values()
+    lowest_score = min(scores)
+    lowest_scores = {}
+    for key, value in average_scores.items():
+        if(value == lowest_score):
+            lowest_scores[key] = value
+
+    print("Lowest Scoring Area(s): \n")
+    present_data(lowest_scores)
+    
+    return lowest_scores
 
 
 def check_if_update(question):
@@ -175,4 +194,5 @@ print("All scores for the month...\n")
 data_for_user = present_data(score_data) # Print scores in a readable format to the user
 average_scores = calculate_average(score_data) # Calculate averages and present to the user
 highest_score = calculate_highest_score(average_scores)
+lowest_score = calculate_lowest_score(average_scores)
 update_yes_no = check_if_update("Would you like to update the worksheet with the averages? (y/n): ")
