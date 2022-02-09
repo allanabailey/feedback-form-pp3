@@ -98,6 +98,7 @@ def get_manual_scores(month):
             print("Data is valid!")
             break
     
+    update_worksheet_manual(scores_data)
     return scores_data
 
 
@@ -131,6 +132,14 @@ def validate_manual_data(scores_data):
         return False
 
     return True
+
+
+def update_worksheet_manual(scores_data):
+    """
+    Update the main 'AllResponses' spreadsheet with the manual form data the user
+    has inputted.
+    """
+    print("Rawr!")
 
 
 def get_scores(month):
