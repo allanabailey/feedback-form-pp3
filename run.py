@@ -21,8 +21,10 @@ def get_month():
     based on the month selected by the user.
     """
     while True:
-        print("Please enter the month that you would like to view the feedback for...\n")
-        print("Note that months are numbered, e.g 1 = January, 2 = February... 11 = November\n")
+        print("Please enter the month that you would like to view")
+        print("the feedback for...\n")
+        print("Note that months are numbered.")
+        print("e.g 1 = January, 2 = February... 11 = November\n")
 
         month_chosen_str = input("Enter your choice of month here: ")
 
@@ -41,12 +43,14 @@ def check_month(month):
     try:
         if(month.isnumeric() is False):
             raise TypeError(
-                f"You must enter a number between 1 and 12. You entered: '{month}'"
+                "You must enter a number between 1 and 12. "
+                f"You entered: '{month}'"
             )
         month_chosen_num = int(month)
         if(month_chosen_num < 1 or month_chosen_num > 12):
             raise ValueError(
-                f"The number entered must be between 1 and 12. You entered: {month_chosen_num}"
+                "The number entered must be between 1 and 12. "
+                f"You entered: {month_chosen_num}"
             )
     except ValueError as e:
         print(f"Invalid input: {e}, please try again.\n")
@@ -60,15 +64,16 @@ def check_month(month):
 
 def check_if_manual_form(month, question):
     """
-    Check to see if the user would like to update the worksheet with a new feedback form manually,
-    for instance if a customer handed them a physical feedback form rather than completing the online
-    google form.
+    Check to see if the user would like to update the worksheet with a new
+    feedback form manually, for instance if a customer handed them a
+    physical feedback form rather than completing the online google form.
     """
     ans = input(question).strip().lower()
     try:
         if(ans not in ["y", "n"]):
             raise ValueError(
-                f"Please enter either 'y' for Yes, or 'n' for No. You entered: {ans}"
+                "Please enter either 'y' for Yes, or 'n' for No. "
+                f"You entered: {ans}"
             )
     except ValueError as e:
         print(f"Invalid input: {e}, please try again.\n")
@@ -82,14 +87,15 @@ def check_if_manual_form(month, question):
 
 def get_manual_scores(month):
     """
-    Gather the scores from the user for the month they have chosen in the case where
-    a physical feedback form has been returned rather than the online feedback form being filled
-    out by the customer.
+    Gather the scores from the user for the month they have chosen in the
+    case where a physical feedback form has been returned rather than the
+    online feedback form being filled out by the customer.
     """
     month_name = calendar.month_name[month]
     while True:
         print(f"Please enter the scores for {month_name}")
-        print("There should be 8 numbers separated by commas all between 1 and 10. Numbers must be whole numbers")
+        print("There should be 8 comma separated numbers between 1 and 10.")
+        print("Numbers must be whole numbers.")
         print("Example: 7,8,6,5,4,3,8,9\n")
 
         data = input("Enter your scores here:\n")
@@ -106,7 +112,8 @@ def get_manual_scores(month):
 
 def validate_manual_data(scores_data):
     """
-    Ensure the scores submitted by the user for manually inputted feedback forms is correct.
+    Ensure the scores submitted by the user for manually inputted
+    feedback forms are correct.
     Numbers must be between 1 and 10.
     There must be 8 numbers separated by commas.
     Numbers must be whole numbers.
@@ -115,12 +122,14 @@ def validate_manual_data(scores_data):
         for score in scores_data:
             if(score.isnumeric() is False):
                 raise TypeError(
-                    f"Exactly 8 round numbers are required. You provided {scores_data}"
+                    "Exactly 8 round numbers are required. "
+                    f"You provided {scores_data}"
                 )
         [int(score) for score in scores_data]
         if(len(scores_data) != 8):
             raise ValueError(
-                f"Exactly 8 values are required. You provided {len(scores_data)}"
+                "Exactly 8 values are required. "
+                f"You provided {len(scores_data)}"
             )
         if(int(score) < 0 or int(score) > 10):
             raise ValueError(
@@ -138,10 +147,10 @@ def validate_manual_data(scores_data):
 
 def update_worksheet_manual(month, scores_data):
     """
-    Update the main 'AllResponses' spreadsheet with the manual form data the user
-    has inputted.
+    Update the main 'AllResponses' spreadsheet with the manual form data
+    the user has inputted.
     """
-    print("Updating 'AllResponses' worksheet with new manual data provided...\n")
+    print("Updating 'AllResponses' worksheet...\n")
     month_name = calendar.month_name[month]
     timest = time.gmtime()
     timestamp = (time.strftime("%d/%m/%Y %H:%M:%S", timest))
@@ -241,14 +250,15 @@ def calculate_lowest_score(average_scores):
 
 def check_if_update(month, average_scores, question):
     """
-    Check to see if the user would like to update the worksheet with these averages
-    or wait until a later date.
+    Check to see if the user would like to update the worksheet
+    with these averages or wait until a later date.
     """
     ans = input(question).strip().lower()
     try:
         if(ans not in ["y", "n"]):
             raise ValueError(
-                f"Please enter either 'y' for Yes, or 'n' for No. You entered: {ans}"
+                "Please enter either 'y' for Yes, or 'n' for No. "
+                f"You entered: {ans}"
             )
     except ValueError as e:
         print(f"Invalid input: {e}, please try again.\n")
@@ -287,17 +297,23 @@ def main():
     Run all functions.
     """
     month = get_month()
-    check_if_manual_form(month, "Would you like to manually enter a new feedback form? (y/n): ")
+    check_if_manual_form(
+        month, "Would you like to manually enter a new feedback form? (y/n): "
+    )
     score_data = get_scores(month)
     print("All scores for the month...\n")
     present_data(score_data)
     average_scores = calculate_average(score_data)
     calculate_highest_score(average_scores)
     calculate_lowest_score(average_scores)
-    check_if_update(month, average_scores, "Would you like to update the worksheet with the averages? (y/n): ")
+    check_if_update(
+        month, average_scores,
+        "Would you like to update the worksheet with the averages? (y/n): "
+    )
 
 
 print("Welcome to your feedback form collector and analyser!")
-print("Please note that any updates are only accurate at the time of updating the worksheet, ")
+print("Please note that any updates are only accurate at the time")
+print("of updating the worksheet, ")
 print("so if any further data or feedback is collected, please return here.")
 main()
