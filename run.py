@@ -59,7 +59,33 @@ def get_manual_scores(month):
     a physical feedback form has been returned rather than the online feedback form being filled
     out by the customer.
     """
+    month_name = calendar.month_name[month]
+    while True:
+        print(f"Please enter the scores for {month_name}")
+        print("There should be 8 numbers separated by commas all between 1 and 10. Numbers must be whole numbers")
+        print("Example: 7,8,6,5,4,3,8,9\n")
+
+        data = input("Enter your scores here:\n")
+
+        scores_data = data.split(",")
+
+        if validate_manual_data(scores_data):
+            print("Data is valid!")
+            break
+    
+    print(scores_data)
+    return scores_data
+
+
+def validate_manual_data(scores_data):
+    """
+    Ensure the scores submitted by the user for manually inputted feedback forms is correct.
+    Numbers must be between 1 and 10.
+    There must be 8 numbers separated by commas.
+    Numbers must be whole numbers.
+    """
     print("Hello world!")
+
 
 def check_month(month):
     """
