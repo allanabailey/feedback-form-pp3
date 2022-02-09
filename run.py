@@ -1,7 +1,7 @@
-import gspread
-from google.oauth2.service_account import Credentials
 import calendar
 import time
+import gspread
+from google.oauth2.service_account import Credentials
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -125,7 +125,7 @@ def validate_manual_data(scores_data):
                     "Exactly 8 round numbers are required. "
                     f"You provided {scores_data}"
                 )
-        score = [int(score) for score in scores_data]
+        [int(score) for score in scores_data]
         if len(scores_data) != 8:
             raise ValueError(
                 "Exactly 8 values are required. "
@@ -171,7 +171,6 @@ def get_scores(month):
     month_chosen_name = calendar.month_name[month]
     print(f"Gathering data for the month: {month_chosen_name}...\n")
     month_worksheet = SHEET.worksheet(month_chosen_name)
-    # month_data = month_worksheet.get_all_values()
 
     scores = []
     scores_with_headers = {}
@@ -283,7 +282,7 @@ def update_worksheet(month, average_scores):
     averages = []
     colno = 2
     i = 0
-    for value in average_scores.items():
+    for key, value in average_scores.items():
         averages.append(value)
         avg_worksheet.update_cell(row, colno, averages[i])
         colno += 1
