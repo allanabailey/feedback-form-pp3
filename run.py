@@ -1,6 +1,7 @@
 import gspread
 from google.oauth2.service_account import Credentials
 import calendar
+import time
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -98,7 +99,7 @@ def get_manual_scores(month):
             print("Data is valid!")
             break
     
-    update_worksheet_manual(scores_data)
+    update_worksheet_manual(month, scores_data)
     return scores_data
 
 
@@ -134,12 +135,19 @@ def validate_manual_data(scores_data):
     return True
 
 
-def update_worksheet_manual(scores_data):
+def update_worksheet_manual(month, scores_data):
     """
     Update the main 'AllResponses' spreadsheet with the manual form data the user
     has inputted.
     """
-    print("Rawr!")
+    print("Updating 'AllResponses' worksheet with new manual data provided...\n")
+    month_name = calendar.month_name[month]
+    timest = time.gmtime()
+    timestamp = (time.strftime("%d/%m/%Y %H:%M:%S", timest))
+    scores = [int(score) for score in scores_data]
+    data = [month_name, timestamp]
+    data.extend(scores)
+    print(data)
 
 
 def get_scores(month):
