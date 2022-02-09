@@ -31,6 +31,31 @@ def get_month():
     return int(month_chosen_str)
 
 
+def check_month(month):
+    """
+    Check the user has inputted a valid month when prompted.
+    It must be an integer between 1 - 12 inclusive.
+    """
+    try:
+        if(month.isnumeric() ==  False):
+            raise TypeError (
+                f"You must enter a number between 1 and 12. You entered: '{month}'"
+            )
+        month_chosen_num = int(month)
+        if(month_chosen_num < 1 or month_chosen_num > 12):
+            raise ValueError(
+                f"The number entered must be between 1 and 12. You entered: {month_chosen_num}"
+            )
+    except ValueError as e:
+        print(f"Invalid input: {e}, please try again.\n")
+        return False
+    except TypeError as e:
+        print(f"Invalid input: {e}, please try again.\n")
+        return False
+
+    return True
+
+
 def check_if_manual_form(question):
     """
     Check to see if the user would like to update the worksheet with a new feedback form manually,
@@ -84,6 +109,11 @@ def validate_manual_data(scores_data):
     Numbers must be whole numbers.
     """
     try:
+        for score in scores_data:
+            if(score.isnumeric() is False):
+                raise TypeError(
+                    f"Exactly 8 round numbers are required. You provided {scores_data}"
+                )
         [int(score) for score in scores_data]
         if len(scores_data) != 8:
             raise ValueError(
@@ -92,30 +122,8 @@ def validate_manual_data(scores_data):
     except ValueError as e:
         print(f"Invalid data: {e}, please try again.\n")
         return False
-
-    return True
-
-
-def check_month(month):
-    """
-    Check the user has inputted a valid month when prompted.
-    It must be an integer between 1 - 12 inclusive.
-    """
-    try:
-        if(month.isnumeric() ==  False):
-            raise TypeError (
-                f"You must enter a number between 1 and 12. You entered: '{month}'"
-            )
-        month_chosen_num = int(month)
-        if(month_chosen_num < 1 or month_chosen_num > 12):
-            raise ValueError(
-                f"The number entered must be between 1 and 12. You entered: {month_chosen_num}"
-            )
-    except ValueError as e:
-        print(f"Invalid input: {e}, please try again.\n")
-        return False
     except TypeError as e:
-        print(f"Invalid input: {e}, please try again.\n")
+        print(f"Invalid data: {e}, please try again.\n")
         return False
 
     return True
