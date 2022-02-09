@@ -28,7 +28,7 @@ def get_month():
 
         month_chosen_str = input("Enter your choice of month here: ")
 
-        if(check_month(month_chosen_str)):
+        if check_month(month_chosen_str):
             print("Valid month chosen.")
             break
 
@@ -41,7 +41,7 @@ def check_month(month):
     It must be an integer between 1 - 12 inclusive.
     """
     try:
-        if(month.isnumeric() is False):
+        if month.isnumeric() is False:
             raise TypeError(
                 "You must enter a number between 1 and 12. "
                 f"You entered: '{month}'"
@@ -79,7 +79,7 @@ def check_if_manual_form(month, question):
         print(f"Invalid input: {e}, please try again.\n")
         return check_if_manual_form(month, question)
 
-    if(ans == "y"):
+    if ans == "y":
         get_manual_scores(month)
     else:
         print("No manual insert needed. Moving on to calculate scores.")
@@ -120,13 +120,13 @@ def validate_manual_data(scores_data):
     """
     try:
         for score in scores_data:
-            if(score.isnumeric() is False):
+            if score.isnumeric() is False:
                 raise TypeError(
                     "Exactly 8 round numbers are required. "
                     f"You provided {scores_data}"
                 )
-        [int(score) for score in scores_data]
-        if(len(scores_data) != 8):
+        score = [int(score) for score in scores_data]
+        if len(scores_data) != 8:
             raise ValueError(
                 "Exactly 8 values are required. "
                 f"You provided {len(scores_data)}"
@@ -171,7 +171,7 @@ def get_scores(month):
     month_chosen_name = calendar.month_name[month]
     print(f"Gathering data for the month: {month_chosen_name}...\n")
     month_worksheet = SHEET.worksheet(month_chosen_name)
-    month_data = month_worksheet.get_all_values()
+    # month_data = month_worksheet.get_all_values()
 
     scores = []
     scores_with_headers = {}
@@ -221,7 +221,7 @@ def calculate_highest_score(average_scores):
     highest_score = max(scores)
     highest_scores = {}
     for key, value in average_scores.items():
-        if(value == highest_score):
+        if value == highest_score:
             highest_scores[key] = value
 
     print("Highest Scoring Area(s): \n")
@@ -239,7 +239,7 @@ def calculate_lowest_score(average_scores):
     lowest_score = min(scores)
     lowest_scores = {}
     for key, value in average_scores.items():
-        if(value == lowest_score):
+        if value == lowest_score:
             lowest_scores[key] = value
 
     print("Lowest Scoring Area(s): \n")
@@ -264,7 +264,7 @@ def check_if_update(month, average_scores, question):
         print(f"Invalid input: {e}, please try again.\n")
         return check_if_update(month, average_scores, question)
 
-    if(ans == "y"):
+    if ans == "y":
         update_worksheet(month, average_scores)
     else:
         print("Spreadsheet not updated.")
@@ -283,7 +283,7 @@ def update_worksheet(month, average_scores):
     averages = []
     colno = 2
     i = 0
-    for key, value in average_scores.items():
+    for value in average_scores.items():
         averages.append(value)
         avg_worksheet.update_cell(row, colno, averages[i])
         colno += 1
