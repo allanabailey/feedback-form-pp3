@@ -145,9 +145,12 @@ def update_worksheet_manual(month, scores_data):
     timest = time.gmtime()
     timestamp = (time.strftime("%d/%m/%Y %H:%M:%S", timest))
     scores = [int(score) for score in scores_data]
-    data = [month_name, timestamp]
+    data = [timestamp, month_name]
     data.extend(scores)
-    print(data)
+    
+    worksheet_to_update = SHEET.worksheet("AllResponses")
+    worksheet_to_update.append_row(data)
+    print("Main responses ('AllResponses') worksheet updated successfully.\n")
 
 
 def get_scores(month):
