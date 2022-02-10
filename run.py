@@ -97,6 +97,9 @@ def get_manual_scores(month):
         print("There should be 8 comma separated numbers between 1 and 10.")
         print("Numbers must be whole numbers.")
         print("Example: 7,8,6,5,4,3,8,9\n")
+        print("Scores should be entered in the order of scores for: ")
+        print("Friendliness, Knowledge, Venue, Washing, ")
+        print("Accommodation, Office, Shop, Activities")
 
         data = input("Enter your scores here:\n")
 
