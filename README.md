@@ -162,7 +162,7 @@ This project was developed in [GitPod](https://gitpod.io) where everything was c
 ## Credits and Acknowledgements
 I would like to thank my **mentor Miguel Martinez at Code Institute** for all of the support and calls throughout the duration of the project and providing feedback throughout.
 
-I would also like to thank **Code Institute** for providing a brilliant course and to all of the **fellow students** for their additional support and encouragement in the slack community.
+I would also like to thank **Code Institute** for providing a brilliant course and to all of the **fellow students** for their additional support and encouragement in the slack community. The Code Institude provided a fanstastic **walkthrough project** which this project could be largely based on as well as multiple **useful lessons** as part of the **diploma in full stack software development**.
   
 I would also like to say thank you to the **tutor, John at Code Institute** who helped explain the Heroku deployment process.
   
