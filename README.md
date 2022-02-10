@@ -144,6 +144,15 @@ All of my python code in the **run.py** file was passed through the **PEP8 Valid
 
 
 ## Deployment
+This project was developed in [GitPod](https://gitpod.io) where everything was committed and pushed to [GitHub Repository](https://github.com/allanabailey/feedback-form-pp3) using the built in capabilties. The Code Institute offered a [template](https://github.com/Code-Institute-Org/python-essentials-template) which could then be pulled and used for the main structure of the repository, and created into a GitPod repository by using this as a template. The main deployment was then completed on [Heroku](https://www.heroku.com/). Please see the process followed below for deployment:
+1. Add newline (\n) characters to any input statements to ensure the deployed code worked in the template application terminal.
+2. Create a list of dependencies into requirements.txt by running the python3 freeze > requirements.txt command.
+3. Commit these final changes to GitHub.
+4. Create a new app on Heroku.
+5. Add the appropriate ConfigVars under the "Settings" section to include the creds.json information stored in git.ignore, as well as the additional key,value information provided. This part allowed access to the APIs used to access the google forms and google sheets utilised.
+6. Add the python and nodejs buildpacks to the application.
+7. Connect the appropriate GitHub repository to the application.
+8. Click manual deploy for the first deployment, with a further manual deployment being undertaken after all updates to the project have been finalised.
 
 
 ## Credits and Acknowledgements
