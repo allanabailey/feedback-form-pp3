@@ -160,3 +160,16 @@ This project was developed in [GitPod](https://gitpod.io) where everything was c
 
 
 ## Credits and Acknowledgements
+I would like to thank my **mentor Miguel Martinez at Code Institute** for all of the support and calls throughout the duration of the project and providing feedback throughout.
+
+I would also like to thank **Code Institute** for providing a brilliant course and to all of the **fellow students** for their additional support and encouragement in the slack community.
+  
+I would also like to say thank you to the **tutor, John at Code Institute** who helped explain the Heroku deployment process.
+  
+The following links below are all of the sites I visited for help with understanding the different python concepts and ideas for the code:
+* [Stack Overflow Article](https://stackoverflow.com/questions/13628791/determine-whether-integer-is-between-two-other-integers) - Checking numbers between a certain range.
+* [DelftStack Article](https://www.delftstack.com/howto/python/python-add-to-dictionary-in-loop/) - Adding to a dictionary within a loop.
+* [Geeks for Geeks Article](https://www.geeksforgeeks.org/print-lists-in-python-4-different-ways/) - Printing a comma separated list of ints rather than displaying them as a list.
+* [Stack Overflow Article](https://stackoverflow.com/questions/30687244/python-3-4-how-to-get-the-average-of-dictionary-values) - Calculating averages within a dictionary
+* [Code Forests Article](https://www.codeforests.com/2020/11/22/gspread-read-write-google-sheet/) - Updating a specific row of a google sheet.
+* [Timestamp Online](https://timestamp.online/article/how-to-convert-timestamp-to-datetime-in-python) - Printing and creeating a timestamp for the current date and time in a particular format.
