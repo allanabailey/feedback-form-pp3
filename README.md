@@ -98,7 +98,7 @@ Prior to starting the project, a **rough flow chart** was created using **pen an
 
 
 ## Technologies Used
-* Python
+* Programming Languages Used: Python
 * [GitPod](https://gitpod.io)
     * GitPod was used as the IDE to develop and write the project which was then pushed to GitHub.
 * [GitHub](https://github.com/)
@@ -114,12 +114,33 @@ Prior to starting the project, a **rough flow chart** was created using **pen an
 ## Testing
 
 ### Manual Testing
+* For each addition to the code, multiple **print** statements were implemented to test the **values of variables** and whether **functions were being called correctly**.
+* For every **data validaiton** step, both correct and incorrect data was supplied to the application to check that **errors were handled correctly**. This would include offering strings, characters and integers where they were both expected and unexpected.
+* All **routes of the flow** of the application were undertaken where the user was given an **option to update or enter** data, for all possible scenarios.
+* All of the above was completed both **before and after initial deployment** to ensure the deployment did not alter the workings of the application.
 
 ### Bugs and Fixes
+* Initially when checking that the user inputted a month value **between 1 and 12** a range method was used. However, this did not work for all cases and so this was changed to a **logical condition** where it checked whether the value was greater than **or** smaller than these figures. As well as resolving the issue, this also made the code more readable.
+* When choosing the option to **update the averages sheet**, the data was updating the row below the one intended when using this statement alone:
+    * avg_worksheet.update_cell(row, colno, averages[i])
+    * To resolve this, these variables:
+        * colno = 2
+        * i = 0
+    * Which incremeneted on each iteration of the list, setting the row to be:
+        * cell = avg_worksheet.find(calendar.month_name[month])
+        * row = cell.row
+* Following passing my code through **PEP8 validation** I removed multiple trailing white spaces, reduced line length, and removed unneeded parentheses to ensure my code exhibited **best coding practices**.
 
 ### User Testing
+Once I had completed my own testing of the application, I asked three different people to use the application as a form of **User Testing** to check that both correct and incorrect use resulted in the **intended output** and to **father suggestions for improvements** and/or identify areas that were not clear. The following areas were improved and altered based on feedback:
+* Altered some of the **print statements to be on multiple lines** rather than one long line to more clearly state instructions and prevent overflow.
+* Improve the **error messages** to be more **readable** by a generic user that is not knowledgeable of computing factors such as base 10 or literal ints.
+* Added a print statement explaining the **order of areas for manual scores** implemented by the user so that it was clear what each of the 8 scores represented.
 
 ### Validation
+All of my python code in the **run.py** file was passed through the **PEP8 Validator** and corrections made until all errors and warnings were gone.
+  
+![PEP8 Validation](/assets/images/testing/pep8-validation.png)
 
 
 ## Deployment
