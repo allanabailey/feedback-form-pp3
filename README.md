@@ -98,6 +98,17 @@ Prior to starting the project, a **rough flow chart** was created using **pen an
 
 
 ## Technologies Used
+* Python
+* [GitPod](https://gitpod.io)
+    * GitPod was used as the IDE to develop and write the project which was then pushed to GitHub.
+* [GitHub](https://github.com/)
+    * GitHub was used for version control and to host the pushed code which was then deployed to Heroku.
+* [Heroku](https://www.heroku.com/)
+    * Heroku was used as a PaaS to deploy the application.
+* [Google Forms](https://www.google.co.uk/intl/en-GB/forms/about/)
+    * Google Forms was used to create the feedback form for customers to submit digitally.
+* [Google Sheets](https://www.google.co.uk/intl/en-GB/sheets/about/)
+    * Google Sheets was used to display and update data in a user-friendly manner.
 
 
 ## Testing
