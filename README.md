@@ -56,6 +56,30 @@ Prior to starting the project, a **rough flow chart** was created using **pen an
 
 
 ## Features
+* User Interface
+    * The user interface of the terminal is the standard template **designed and created by Code Institute**.
+  
+![User Interface](/assets/images/features/user-interface.png) 
+  
+* Terminal Scores and Data
+    * In addition to the **google sheet** providing a user-friendly presentation of the data, the terminal has been designed to **print scores and data to the user in a readable format** with a dedicated **present_data()** function.
+  
+![Terminal Scores and Data](/assets/images/features/scores-presented-to-user.png) 
+  
+* Main Google Sheet with All Scores Recorded
+    * The first and main sheet of the **google sheet** contains **every single slice of feedback data** ever submitted and entered for **all months**. This is a very **user-friendly** presentation of the data which is **automatically updated**. This would currently only be suitable for months **within the same year** but this is expanded on in the **future implementations** section of the readme.
+  
+![Main Google Sheet with All Scores](/assets/images/features/all-responses-worksheet.png) 
+  
+* Google Sheet Displaying Averages
+    * Once the user or company is happy that **all feedback for the month** has been **collected and inputted** there is an option to **update the averages worksheet**. This shows all **12 months, side-by-side, across all areas** to allow for a user-friendly view of data and **ease of analysis**. This worksheet can be **updated again if further feedback is received** by the user simply returning to the application and updating the same month again.
+  
+![Averages Sheet](/assets/images/features/averages-worksheet.png)
+
+* Monthly Sheets
+    * By using a **query** on the first cell of the **monthly sheets**, data for each month can be vewed **individually** and is **updated automatically from the main AllResponses sheet**. Whilst this could have been achieved with code and iteration for the scores, this allowed for a more desireable **user interface and display** to the user which was more appropriate in a **real world application**
+  
+![Monthly Sheets](/assets/images/features/monthly-worksheet.png)
 
 
 ## Future Implementations
