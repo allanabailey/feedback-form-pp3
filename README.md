@@ -13,6 +13,18 @@ A web application built and designed for business owners and/or those in the hos
 As a back end web application, there are no front end features as this utilises the template terminal supplied by Code Institute. However the application itself provides a mixture of average scores, analyses the highest and lowest scores of the organisation, and produces both a readable print for users, as well as updating a user friendly google sheet that would be accessible to all in a real worl application.
 
 ### Goals
+* Application Goals:
+    * Provide users with an option to manually enter feedback data not submitted digitally via the google form.
+    * Allow users/companies to easily identify their highest and lowest scoring areas on a monthly basis.
+    * Provide insights to areas of improvement for companies.
+    * Offer a more user-friendly view of data via an updated google sheet linked to both the terminal application and the google forms submitted.
+  
+* Personal Goals:
+    * Create a back end web application using Python for my portfolio.
+    * Build on and improve my knowledge in Python.
+    * Learn about the various libraries and modules available in Python.
+    * Become comfortable with the deployment process on Heroku.
+    * Create a back end web application with potential real world application.
 
 
 ## Users
