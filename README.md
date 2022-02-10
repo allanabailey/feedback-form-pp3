@@ -123,7 +123,7 @@ Prior to starting the project, a **rough flow chart** was created using **pen an
 * Initially when checking that the user inputted a month value **between 1 and 12** a range method was used. However, this did not work for all cases and so this was changed to a **logical condition** where it checked whether the value was greater than **or** smaller than these figures. As well as resolving the issue, this also made the code more readable.
 * When choosing the option to **update the averages sheet**, the data was updating the row below the one intended when using this statement alone:
     * avg_worksheet.update_cell(row, colno, averages[i])
-    * To resolve this, these variables:
+    * To resolve this, these variables were implemented:
         * colno = 2
         * i = 0
     * Which incremeneted on each iteration of the list, setting the row to be:
@@ -132,7 +132,7 @@ Prior to starting the project, a **rough flow chart** was created using **pen an
 * Following passing my code through **PEP8 validation** I removed multiple trailing white spaces, reduced line length, and removed unneeded parentheses to ensure my code exhibited **best coding practices**.
 
 ### User Testing
-Once I had completed my own testing of the application, I asked three different people to use the application as a form of **User Testing** to check that both correct and incorrect use resulted in the **intended output** and to **father suggestions for improvements** and/or identify areas that were not clear. The following areas were improved and altered based on feedback:
+Once I had completed my own testing of the application, I asked three different people to use the application as a form of **User Testing** to check that both correct and incorrect use resulted in the **intended output** and to **offer suggestions for improvements** and/or identify areas that were not clear. The following areas were improved and altered based on feedback:
 * Altered some of the **print statements to be on multiple lines** rather than one long line to more clearly state instructions and prevent overflow.
 * Improve the **error messages** to be more **readable** by a generic user that is not knowledgeable of computing factors such as base 10 or literal ints.
 * Added a print statement explaining the **order of areas for manual scores** implemented by the user so that it was clear what each of the 8 scores represented.
