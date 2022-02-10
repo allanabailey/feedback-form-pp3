@@ -10,7 +10,7 @@ This project was created as part of Code Institute’s Diploma in Full Stack Sof
 A web application built and designed for business owners and/or those in the hospitality industry to gather, enter and analyse feedback from customers more easily than traditional manual processes. It has been designed to work in conjunction with both manually and digitally submitted forms and present average scores to the user to provide useful insights into their business and custom satisfaction.
 
 ### Features
-As a back end web application, there are no front end features as this utilises the template terminal supplied by Code Institute. However the application itself provides a mixture of average scores, analyses the highest and lowest scores of the organisation, and produces both a readable print for users, as well as updating a user friendly google sheet that would be accessible to all in a real worl application.
+As a back end web application, there are no front end features as this utilises the template terminal supplied by Code Institute. However the application itself provides a mixture of average scores, analyses the highest and lowest scores of the organisation, and produces both a readable print for users, as well as updating a user friendly google sheet that would be accessible to all in a real world application.
 
 ### Goals
 * Application Goals:
@@ -28,8 +28,19 @@ As a back end web application, there are no front end features as this utilises 
 
 
 ## Users
+Companies/Clients could use this application to:
+* Gain useful insights into areas succeeding/failing in their business.
+* Analyse customer feedback to implement improvements in areas that are underperforming.
+* View statistics on a month by month basis to identify problem areas and to ascertain if new implementations or procedures that have been put in place have increased customer satisfaction.
+* Allow customers to submit feedback both manually and digitally.
+* Update a user friendly interface (google sheetws) for all members of the organisation to be able to review the feedback.
 
 ### User Stories
+* As a company I would like customers to be able to submit feedback forms easily so that we can improve our customer satisfaction and ensure good business.
+* As a company I would like to be able to view the overall and average scores in different areas of the business to easily identify areas that need to improve.
+* As a company I would like to easily identify my highest and lowest scoring areas so that focus can be placed on these in the future.
+* As a customer I would like to be able to submit my form once I get home online so that I don't have to stand and fill out a form before leaving.
+* As a customer I would like to be able to hand a paper feedback form back to the organisation as I do not own a computer at home.
 
 
 ## Project Flow and Purpose
