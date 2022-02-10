@@ -26,7 +26,7 @@ def get_month():
         print("Note that months are numbered.")
         print("e.g 1 = January, 2 = February... 11 = November\n")
 
-        month_chosen_str = input("Enter your choice of month here: ")
+        month_chosen_str = input("Enter your choice of month here:\n")
 
         if check_month(month_chosen_str):
             print("Valid month chosen.")
