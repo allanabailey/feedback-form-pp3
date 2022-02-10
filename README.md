@@ -44,10 +44,15 @@ Companies/Clients could use this application to:
 
 
 ## Project Flow and Purpose
+### Purpose and Real World Application
+The main purpose of this project was to build an application that could be **used by organisations** to **gather feedback from customers** in all different areas of the business. Customers would be able to fill out both **online and paper feedback forms**, both of which interact and work with the application. 
+  
+The **google sheet** allows for a more **user-friendly** view of the data which can be **updated from the application** or **automatically from online google forms submitted**. The application has been designed to **present data in a readable format** to the user, however the google sheet allows for a broken-down view on a **month by month** basis, as well as a sheet dedicated to **average scores**.
 
-## Flow and Processes
-
-## Purpose and Real World Application
+### Flow and Processes
+Prior to starting the project, a **rough flow chart** was created using **pen and paper** to begin understanding the **logic and flow** of the project. A more comprehensive and digital flowchart was then created using **Lucid Chart** as seen below.
+  
+![Flow Chart by Lucid Chart](/assets/images/flow-chart/flow-chart.png) 
 
 
 ## Features
