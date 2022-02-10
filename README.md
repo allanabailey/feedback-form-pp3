@@ -109,6 +109,8 @@ Prior to starting the project, a **rough flow chart** was created using **pen an
     * Google Forms was used to create the feedback form for customers to submit digitally.
 * [Google Sheets](https://www.google.co.uk/intl/en-GB/sheets/about/)
     * Google Sheets was used to display and update data in a user-friendly manner.
+* [Gyazo](https://gyazo.com/en)
+    * Gyazo was used to take screenshots and create the images.
 
 
 ## Testing
