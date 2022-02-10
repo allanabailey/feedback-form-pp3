@@ -48,6 +48,13 @@ Companies/Clients could use this application to:
 The main purpose of this project was to build an application that could be **used by organisations** to **gather feedback from customers** in all different areas of the business. Customers would be able to fill out both **online and paper feedback forms**, both of which interact and work with the application. 
   
 The **google sheet** allows for a more **user-friendly** view of the data which can be **updated from the application** or **automatically from online google forms submitted**. The application has been designed to **present data in a readable format** to the user, however the google sheet allows for a broken-down view on a **month by month** basis, as well as a sheet dedicated to **average scores**.
+  
+The project was based on an **outdoor activity centre** with the initial data showcasing the importance of custom feedback. For example the **first 5 scores (Jan - May)** could illustrate the following reasons behind the feedback gathered:
+* January - Washing and showering facilities were the lowest scoring areas, however a new shower block was built for February where the scores can be seen to have improved.
+* February - A new staff member was taken on and was still in training for the month, explaining the low score for staff knowledge.
+* March - There was an issue with stock in the on-site shop resulting in a lack of choice and quantity of items for many customers, resulting ina  low average for shop scores.
+* April - The stock issue was resolved, and the new staff member now fully trained, so all scores improved with very high overall averages across the different areas.
+* May - Due to bad weather and an issue with the address not being registered with the post office, only half of the car park was utilised, and many customers were unable to find the site with their sat navs / google maps. This resulted in a low score for the venue.
 
 ### Flow and Processes
 Prior to starting the project, a **rough flow chart** was created using **pen and paper** to begin understanding the **logic and flow** of the project. A more comprehensive and digital flowchart was then created using **Lucid Chart** as seen below.
@@ -83,6 +90,11 @@ Prior to starting the project, a **rough flow chart** was created using **pen an
 
 
 ## Future Implementations
+* Cater for expansion of data collection for **more than one year** as it currently only distinguishes by month and not year.
+* Allow users to **compare one month against another** to see improvements or the affects or any implementations undertaken by the organisation / company have had.
+* Allow users to interact with the application and gain insight into feedback for a **collection of months e.g January - March** to allow more seasonal business better data analysis.
+* The use of **Pandas DataFrames** would allow for better iteration over large data sets and control over data anlysis.
+* Implement the ability to **share and compare data** between different company sites where an organisation may have **multiple branches**.
 
 
 ## Technologies Used
