@@ -81,6 +81,9 @@ def check_if_manual_form(month, question):
 
     if ans == "y":
         get_manual_scores(month)
+        check_if_manual_form(
+            month, "Would you like to enter another feedback form? (y/n): "
+        )
     else:
         print("No manual insert needed. Moving on to calculate scores.")
 
