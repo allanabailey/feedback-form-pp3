@@ -144,7 +144,7 @@ Once I had completed my own testing of the application, I asked three different 
 * Added **print statements to the end of the application** to alert the user that the applicaiton has ended and inform them of the way to restart it.
 
 ### Validation
-All of my python code in the **run.py** file was passed through the **PEP8 Validator** and corrections made until all errors and warnings were gone.
+All of my python code in the **run.py** file was passed through the **PEP8 Validator** and corrections made until all errors and warnings were gone. All validation was repeated with the small changes following updates after user testing and the same clear results on PEP8 were achieved.
   
 ![PEP8 Validation](/assets/images/testing/pep8-validation.png)
 

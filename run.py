@@ -320,7 +320,6 @@ def main():
     print("would like to select a different month.")
 
 
-
 print("Welcome to your feedback form collector and analyser!")
 print("Please note that any updates are only accurate at the time")
 print("of updating the worksheet, ")
