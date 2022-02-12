@@ -140,6 +140,8 @@ Once I had completed my own testing of the application, I asked three different 
 * Altered some of the **print statements to be on multiple lines** rather than one long line to more clearly state instructions and prevent overflow.
 * Improve the **error messages** to be more **readable** by a generic user that is not knowledgeable of computing factors such as base 10 or literal ints.
 * Added a print statement explaining the **order of areas for manual scores** implemented by the user so that it was clear what each of the 8 scores represented.
+* Allowed the user to **enter multiple feedback** forms by looping through the function in the case it was 'y'.
+* Added **print statements to the end of the application** to alert the user that the applicaiton has ended and inform them of the way to restart it.
 
 ### Validation
 All of my python code in the **run.py** file was passed through the **PEP8 Validator** and corrections made until all errors and warnings were gone.
