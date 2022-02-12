@@ -315,6 +315,10 @@ def main():
         month, average_scores,
         "Would you like to update the worksheet with the averages? (y/n): "
     )
+    print("Thank you for using the feedback form analyser. Please click ")
+    print("the button at the top of the application to start again or if you ")
+    print("would like to select a different month.")
+
 
 
 print("Welcome to your feedback form collector and analyser!")
