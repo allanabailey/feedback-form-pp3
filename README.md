@@ -113,8 +113,12 @@ Prior to starting the project, a **rough flow chart** was created using **pen an
     * Google Sheets was used to display and update data in a user-friendly manner.
 * [Gyazo](https://gyazo.com/en)
     * Gyazo was used to take screenshots and create the images.
-
-
+  
+### Python Modules
+* GSpread - For the use of generating and altering google sheets.
+* Google Auth - Credentials and access to google account for feedback form google sheet and google form.
+  
+  
 ## Testing
 
 ### Manual Testing
